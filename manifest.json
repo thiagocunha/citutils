@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CIT Utils",
+  "description": "Unofficial automation and utilities.",
+  "version": "3",
+  "action": {
+    "default_title": "CIT Utils",
+    "default_icon": { "256": "img/icon256.png"},
+    "default_popup": "temp.html"
+  },
+  "icons": {
+    "128": "img/icon128.png",
+    "256": "img/icon256.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://wage.ciandt.com/*"],
+      "js": [ "content.js", "util/jquery.min.js"]
+    }
+  ],
+  "background": {
+    "serviceworker": ["bg.js"],
+    "type": "module"
+  }
+  ,
+   "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
